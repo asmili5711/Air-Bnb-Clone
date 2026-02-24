@@ -45,7 +45,7 @@ Set up your `.env` file with your MongoDB, Cloudinary, and Mapbox credentials.
 
 Start the server  
 ```sh
-node app.js
+npm start
 ```
 
 Open your browser and go to:  
