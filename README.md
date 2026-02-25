@@ -2,6 +2,11 @@
 
 A full-stack Airbnb-style hotel listing application built with Node.js, Express.js, MongoDB, and EJS. This project allows users to create, read, update, and delete hotel listings, upload images, leave reviews, and search by location or country. The project follows the **MVC (Model-View-Controller) architecture** for clean code organization.
 
+## What’s New (2026-02)
+- Razorpay checkout (test mode) added for bookings.
+- Booking creation + confirmation pages and “My bookings” navbar link.
+- New env vars required: `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET` (use test keys locally; live keys on Render).
+
 ---
 
 ## 📌 Features
@@ -96,6 +101,7 @@ Open your browser and go to:
 
 - **Cloudinary API** – For image uploads and storage  
 - **Mapbox Geocoding API** – For converting locations to coordinates and displaying maps
+- **Razorpay API** – For payment checkout and booking creation (test/live keys)
 
 ---
 
