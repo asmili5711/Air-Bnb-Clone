@@ -21,6 +21,7 @@ const User = require("./models/user.js");
 const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+const bookingsRouter = require("./routes/bookings.js");
 
 
 
@@ -41,6 +42,7 @@ async function main() {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(method("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
@@ -98,6 +100,7 @@ app.use((req, res, next) => {
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);
+app.use("/bookings", bookingsRouter);
 
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page not found!"));

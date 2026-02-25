@@ -19,6 +19,9 @@ router.route("/")
     wrapAsync(listingController.createListing)
 );
 
+// create Razorpay order
+router.post('/:id/order', isLoggedIn, listingController.createCheckoutOrder);
+
 
 
 // Search route (added to match your style)

@@ -2,6 +2,11 @@
 <script>
     const mapToken = "<%= process.env.MAP_TOKEN %>";
     const listing =  <%- JSON.stringify(listing)%>;
+    const paymentStatus = "<%= paymentStatus || '' %>";
+    const orderCreateUrl = `/listings/<%= listing._id %>/order`;
+    const razorKey = "<%= process.env.RAZORPAY_KEY_ID %>";
+    const currUserEmail = "<%= currUser ? currUser.email : '' %>";
+    const currUserName = "<%= currUser ? currUser.username : '' %>";
 </script>
 
 
@@ -23,6 +28,12 @@
     </p>
   </div>
 </div>
+
+<% if (currUser && (!listing.Owner || !listing.Owner._id.equals(currUser._id))) { %>
+<div class="col-6 offset-3 mb-3 d-grid">
+  <button id="payButton" class="btn btn-success">Book & Pay</button>
+</div>
+<% } %>
 
 
 <br>
@@ -95,3 +106,5 @@
     </div>
 
     <script src="/js/map.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="/js/payment.js"></script>

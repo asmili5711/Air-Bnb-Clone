@@ -1,0 +1,17 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="row mt-4">
+  <div class="col-8 offset-2">
+    <h3>Booking Confirmed</h3>
+    <div class="card mt-3">
+      <div class="card-body">
+        <h5 class="card-title"><%= booking.listing.title %></h5>
+        <p class="card-text">Order ID: <%= booking.orderId %></p>
+        <p class="card-text">Amount: ₹ <%= (booking.amount/100).toLocaleString("en-IN") %> <%= booking.currency %></p>
+        <p class="card-text">Booked by: <%= booking.buyer.username %></p>
+        <p class="card-text text-muted">Created: <%= booking.createdAt.toLocaleString() %></p>
+        <a class="btn btn-outline-dark" href="/listings/<%= booking.listing._id %>">Back to listing</a>
+      </div>
+    </div>
+  </div>
+</div>
