@@ -5,7 +5,7 @@ A full-stack Airbnb-style hotel listing application built with Node.js, Express.
 ## What’s New (2026-02)
 - Razorpay checkout (test mode) added for bookings.
 - Booking creation + confirmation pages and “My bookings” navbar link.
-- New env vars required: `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET` (use test keys locally; live keys on Render).
+- New env vars required: `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`. Use **test keys** both locally and on Render unless you’re ready to process real payments; swap to live keys only when launching payments for real.
 
 ---
 
